@@ -98,7 +98,7 @@
         "typescript": "~5.0.0"
     },
     "volta": {
-        "node": "16.14.2"
+        "node": "18.16.0"
     },
     "dependencies": {
         "localforage": "^1.10.0",

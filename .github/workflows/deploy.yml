@@ -16,8 +16,8 @@ jobs:
             - name: setup node and pnpm
               uses: dafnik/setup-node-pnpm@v3
               with:
-                  pnpm: 7
-                  node: 16
+                  pnpm: 8.15.4
+                  node: 18.16.0
               # cwd: "."
               # install: false
               # install-ignore-scripts: false
