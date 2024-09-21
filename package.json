@@ -1,6 +1,6 @@
 {
     "name": "@supuwoerc/tracker",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "front-end application bug and performance tracker that can also be used as a logger",
     "main": "dist/index.js",
     "module": "dist/index.js",

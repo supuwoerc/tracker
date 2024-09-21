@@ -1,5 +1,12 @@
 
 
+## [0.1.2](https://github.com/supuwoerc/tracker/compare/0.1.1...0.1.2) (2024-09-21)
+
+
+### 🎫 Chores | 其他更新
+
+* 调整文档生成配置 ([2a7515e](https://github.com/supuwoerc/tracker/commit/2a7515e63564d5f5b07cc1e2c0b14725a16ac90d))
+
 ## [0.1.1](https://github.com/supuwoerc/tracker/compare/0.1.0...0.1.1) (2024-09-21)
 
 
