@@ -1,5 +1,12 @@
 
 
+## [0.1.3](https://github.com/supuwoerc/tracker/compare/0.1.2...0.1.3) (2024-09-21)
+
+
+### 🐛 Bug Fixes | Bug 修复
+
+* 修复方法修饰 ([394d4d4](https://github.com/supuwoerc/tracker/commit/394d4d4b9e7819eaa12a80f88eb4985ef525b2e4))
+
 ## [0.1.2](https://github.com/supuwoerc/tracker/compare/0.1.1...0.1.2) (2024-09-21)
 
 
