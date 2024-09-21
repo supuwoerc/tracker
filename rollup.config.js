@@ -45,7 +45,7 @@ const plugins = [
         preventAssignment: true,
         'process.env.NODE_ENV': JSON.stringify(envConfig.NODE_ENV),
     }),
-    // terser(),
+    terser(),
     cleaner({ targets: ['./dist/'], silent: false }),
     tscAlias(),
 ]
