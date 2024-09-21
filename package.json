@@ -1,7 +1,7 @@
 {
-    "name": "@ccint/tracker",
-    "version": "1.0.0",
-    "description": "前端埋点&页面行为跟踪",
+    "name": "@supuwoerc/tracker",
+    "version": "0.0.0",
+    "description": "front-end application bug and performance tracker that can also be used as a logger",
     "main": "dist/index.js",
     "module": "dist/index.js",
     "types": "index.d.ts",
@@ -9,25 +9,28 @@
     "scripts": {
         "preinstall": "npx only-allow pnpm",
         "prepare": "husky install",
-        "build": "rollup -c && npm run doc",
-        "build:tsc": "npx tsc",
-        "dev": "rollup -c --watch",
+        "build": "cross-env NODE_ENV=prod rollup -c",
+        "build:tsc": "cross-env NODE_ENV=prod npx tsc",
+        "dev": "cross-env NODE_ENV=dev rollup -c --watch",
         "doc": "typedoc --options typedoc.json",
         "test": "jest --watch",
-        "test:commit": "jest",
+        "test:commit": "jest --passWithNoTests",
         "coverage": "jest --coverage",
         "lint": "eslint --ext .ts src --config=.eslintrc.json",
         "lint:fix": "eslint --ext .ts src --fix --config=.eslintrc.json",
         "lint-staged": "lint-staged",
-        "commitlint": "commitlint --config commitlint.config.cjs -e -V"
+        "commitlint": "commitlint --config commitlint.config.cjs -e -V",
+        "release": "release-it",
+        "ypush": "pnpm run build && yalc push"
     },
     "lint-staged": {
         "src/**/*.{ts}": "npm run lint"
     },
     "exports": {
         ".": {
-            "import": "./dist/index.esm.js",
-            "require": "./dist/index.common.js",
+            "import": "./dist/index.js",
+            "require": "./dist/index.js",
+            "script": "./dist/index.js",
             "types": "./index.d.ts"
         }
     },
@@ -41,28 +44,36 @@
     ],
     "repository": {
         "type": "git",
-        "url": "git+https://gitlab.intsig.net/packages/npm/tracker.git"
+        "url": "git+https://github.com/supuwoerc/tracker.git"
     },
-    "author": "QiMeng Zhang <qimeng_zhang@intsig.net>",
-    "homepage": "https://gitlab.intsig.net/packages/npm/tracker",
+    "author": "QiMeng Zhang <zhangzhouou@gmail.com>(https://github.com/supuwoerc)",
+    "homepage": "https://github.com/supuwoerc/tracker",
     "bugs": {
-        "url": "https://gitlab.intsig.net/packages/npm/tracker/-/issues"
+        "url": "https://github.com/supuwoerc/tracker/issues"
     },
     "license": "MIT",
     "devDependencies": {
         "@babel/core": "^7.21.8",
         "@commitlint/cli": "^17.6.3",
         "@commitlint/config-conventional": "^17.6.3",
+        "@release-it/conventional-changelog": "^8.0.1",
         "@rollup/plugin-alias": "^5.0.0",
         "@rollup/plugin-babel": "^6.0.3",
         "@rollup/plugin-commonjs": "^24.1.0",
         "@rollup/plugin-eslint": "^9.0.3",
         "@rollup/plugin-json": "^6.0.0",
         "@rollup/plugin-node-resolve": "^15.0.2",
+        "@rollup/plugin-replace": "^5.0.5",
+        "@rollup/plugin-terser": "^0.4.4",
         "@types/jest": "^29.5.1",
+        "@types/lodash-es": "^4.17.12",
+        "@types/node": "^22.5.5",
         "@typescript-eslint/eslint-plugin": "^5.59.2",
         "@typescript-eslint/parser": "^5.59.2",
         "add": "^2.0.6",
+        "babel-preset-env": "^1.7.0",
+        "cross-env": "^7.0.3",
+        "dotenv": "^16.3.1",
         "esbuild": "^0.17.18",
         "eslint": "^8.40.0",
         "eslint-config-airbnb-base": "^15.0.0",
@@ -75,18 +86,23 @@
         "jest-environment-jsdom": "^29.5.0",
         "lint-staged": "^13.2.2",
         "prettier": "^2.8.8",
+        "release-it": "^17.6.0",
         "rollup": "^3.21.5",
         "rollup-plugin-cleaner": "^1.0.0",
         "rollup-plugin-cleanup": "^3.2.1",
-        "rollup-plugin-dts": "^5.3.0",
         "rollup-plugin-esbuild": "^5.0.0",
-        "rollup-plugin-terser": "^7.0.2",
+        "rollup-plugin-tsc-alias": "^1.1.2",
         "rollup-plugin-typescript2": "^0.34.1",
         "ts-jest": "^29.1.0",
         "typedoc": "^0.24.6",
-        "typescript": "^5.0.4"
+        "typescript": "~5.0.0"
     },
     "volta": {
         "node": "16.14.2"
+    },
+    "dependencies": {
+        "localforage": "^1.10.0",
+        "lodash-es": "^4.17.21",
+        "web-vitals": "^4.2.3"
     }
 }

@@ -3,6 +3,7 @@
         "target": "ESNext",
         "module": "esnext",
         "lib": ["esnext", "dom"],
+        "types": ["node"],
         "moduleResolution": "node",
         "esModuleInterop": true,
         "strict": true,
@@ -10,8 +11,13 @@
         "resolveJsonModule": true,
         "skipLibCheck": true,
         "baseUrl": "./",
+        "declaration": true,
+        "strictPropertyInitialization": false,
+        "outDir": "dist",
         "paths": {
             "@/*": ["src/*"]
         }
-    }
+    },
+    "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx"],
+    "exclude": ["node_modules", "dist", "**/*.test.ts", "**/__test__/*"]
 }

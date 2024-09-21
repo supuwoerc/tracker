@@ -1,5 +1,4 @@
-import packageJson from '../package.json'
+import { Tracker } from './core/tracker'
 
-export default class Tracker {
-    readonly version: string = packageJson.version
-}
+export { Tracker }
+export default Tracker
