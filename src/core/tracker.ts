@@ -164,7 +164,7 @@ export class Tracker {
      * 配置user
      * @param user
      */
-    private setUser(user: string | number) {
+    public setUser(user: string | number) {
         const callback = (item: TMessage) => {
             item.user = user
         }
@@ -176,7 +176,7 @@ export class Tracker {
     /**
      * 添加自定义日志
      */
-    private info(...args: string[]) {
+    public info(...args: string[]) {
         if (args.length > 0 && args.length < 5) {
             const info: TMessage['info'] = {}
             args.forEach((item, index) => {
@@ -194,7 +194,7 @@ export class Tracker {
      * 添加错误日志
      * @param err
      */
-    private error(err: Error) {
+    public error(err: Error) {
         this.queue.push({
             ...this.getBasicMessage(TMessageType.error),
             message: err.message,
