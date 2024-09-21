@@ -1,5 +1,12 @@
 
 
+## [0.1.1](https://github.com/supuwoerc/tracker/compare/0.1.0...0.1.1) (2024-09-21)
+
+
+### 🎫 Chores | 其他更新
+
+* 发布到npm ([702be5c](https://github.com/supuwoerc/tracker/commit/702be5c52eb5f770fcf5f006fb932329e1833db9))
+
 ## 0.1.0 (2024-09-21)
 
 
