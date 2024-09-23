@@ -6,6 +6,10 @@
 
 `pnpm add @supuwoerc/tracker`
 
+## TypeDoc
+
+[Tracker](https://supuwoerc.github.io/tracker/index.html)
+
 ## 维护者
 
 [@Supuwoerc](https://github.com/supuwoerc)
